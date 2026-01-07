@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aman Sharma — Academic Web CV</title>
+  <meta name="description" content="Aman Sharma — Cancer Immunology, Computational Immunology, Protein Engineering, Structural Biology, CAR-T/BiTE, Neoantigen Discovery" />
+
+  <style>
+    :root{
+      --bg:#0b1020; --card:#0f1733; --text:#e9ecf5; --muted:#b7c0dd;
+      --line:rgba(255,255,255,.10);
+      --accent:#7c5cff; --accent2:#39c6ff;
+      --chip:rgba(124,92,255,.14);
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(800px 400px at 15% 10%, rgba(124,92,255,.18), transparent 55%),
+        radial-gradient(700px 420px at 85% 15%, rgba(57,198,255,.14), transparent 55%),
+        radial-gradient(900px 520px at 50% 85%, rgba(124,92,255,.12), transparent 55%),
+        var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    a.underline{text-decoration:underline; text-decoration-color: rgba(57,198,255,.55); text-underline-offset: 3px;}
+    .wrap{max-width:var(--max); margin:48px auto; padding:0 18px 60px;}
+    .top{
+      display:grid; gap:18px;
+      grid-template-columns: 1.35fr .65fr;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .top{grid-template-columns:1fr;} }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      backdrop-filter: blur(6px);
+    }
+    .name{
+      font-size: clamp(26px, 4vw, 40px);
+      line-height:1.1;
+      margin:0 0 8px;
+      letter-spacing: .2px;
+    }
+    .tagline{color:var(--muted); margin:0 0 14px; font-size: 15.5px;}
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center;
+      color:var(--muted); font-size:14.5px;
+    }
+    .meta span{display:inline-flex; gap:8px; align-items:center}
+    .dot{
+      width:6px; height:6px; border-radius:50%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      display:inline-block;
+    }
+    .btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .btn{
+      display:inline-flex; gap:9px; align-items:center;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 14px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(57,198,255,.35); background: rgba(255,255,255,.05);}
+    .btn.primary{
+      border-color: rgba(124,92,255,.35);
+      background: linear-gradient(90deg, rgba(124,92,255,.22), rgba(57,198,255,.16));
+    }
+
+    .kpis{display:grid; gap:12px; grid-template-columns: 1fr;}
+    .kpi{
+      padding:14px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .kpi .label{color:var(--muted); font-size: 12.5px; margin-bottom:4px}
+    .kpi .value{font-size: 14.8px}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      font-size: 12.5px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(124,92,255,.22);
+      background: var(--chip);
+      color: var(--text);
+    }
+
+    .section{margin-top:18px; padding:20px 22px;}
+    .section h2{
+      margin:0 0 12px;
+      font-size: 16.5px;
+      letter-spacing: .2px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .bar{
+      height:10px; width:10px; border-radius:3px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:inline-block;
+    }
+    .grid2{display:grid; gap:14px; grid-template-columns: 1fr 1fr;}
+    @media (max-width: 860px){ .grid2{grid-template-columns:1fr;} }
+
+    .item{
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .row{
+      display:flex; justify-content:space-between; gap:12px;
+      align-items:flex-start; flex-wrap:wrap;
+    }
+    .role{font-weight:650;}
+    .where{color:var(--muted); font-size: 13.5px; margin-top:2px;}
+    .when{color:var(--muted); font-size:13.5px; white-space:nowrap;}
+    .muted{color:var(--muted)}
+    .mini{font-size:12.5px; color:var(--muted)}
+    ul{margin:10px 0 0 18px; padding:0}
+    li{margin:6px 0; color: var(--text);}
+    .footer{margin-top:16px; text-align:center; color: var(--muted); font-size: 12.5px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <div class="top">
+      <div class="card">
+        <h1 class="name">Aman Sharma</h1>
+
+        <p class="tagline">
+          Cross-disciplinary researcher combining <strong>agentic AI systems</strong>, <strong>computational immunology</strong>,
+          and <strong>protein engineering</strong> to develop precision cancer immunotherapies.
+          Experienced in <strong>CAR-T and BiTE engineering</strong>, <strong>single-cell genomics</strong>, and
+          <strong>large-scale neoantigen discovery</strong>, bridging computational modeling with experimental immuno-engineering
+          and translational research.
+        </p>
+
+        <div class="meta">
+          <span><i class="dot"></i> New York, USA</span>
+          <span><i class="dot"></i> <a class="underline" href="mailto:amansharma.e44@gmail.com">amansharma.e44@gmail.com</a></span>
+        </div>
+
+        <div class="btns" aria-label="links">
+          <a class="btn primary" href="https://www.linkedin.com/in/aman44/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/amans44/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://orcid.org/0000-0001-6954-061X" target="_blank" rel="noreferrer">ORCID</a>
+          <a class="btn" href="https://www.researchgate.net/profile/Aman-Sharma-16?ev=hdr_xprf" target="_blank" rel="noreferrer">ResearchGate</a>
+
+          <!-- Direct PDF link (raw) so it opens the file, not the GitHub page -->
+          <a class="btn" href="https://raw.githubusercontent.com/amans44/amansharma.github.io/main/Aman_CV_2026.pdf"
+             target="_blank" rel="noreferrer">
+            Download PDF CV
+          </a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Cancer Immunology</span>
+          <span class="chip">Computational Immunology</span>
+          <span class="chip">Neoantigen Discovery</span>
+          <span class="chip">Immunopeptidomics</span>
+          <span class="chip">CAR-T / BiTE</span>
+          <span class="chip">Protein Engineering</span>
+          <span class="chip">Structural Biology</span>
+          <span class="chip">AlphaFold • PyMOL • VMD</span>
+          <span class="chip">HPC • Docker • Singularity</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="kpis">
+          <div class="kpi">
+            <div class="label">Current role</div>
+            <div class="value">
+              <strong>Assistant Research Scientist</strong>
+              <div class="mini">Perlmutter Cancer Center, NYU Langone Health</div>
+            </div>
+          </div>
+
+          <div class="kpi">
+            <div class="label">Core focus</div>
+            <div class="value">
+              Agentic AI + immunopeptidomics-driven antigen discovery + structure-guided protein/cell engineering for translational immunotherapy
+            </div>
+          </div>
+
+          <div class="kpi">
+            <div class="label">Best-fit PhD themes</div>
+            <div class="value">
+              Cancer Research • Cancer Immunology & Immunotherapy • Protein Engineering & Structural Biology •
+              CAR-T & BiTE Engineering • Translational Cancer Research • Computational Immunology •
+              Neoantigen & Immunopeptidomics-driven Target Discovery
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH SUMMARY -->
+    <section class="card section">
+      <h2><span class="bar"></span>Research Summary</h2>
+      <p class="muted" style="margin:0">
+        Experienced in <strong>CAR-T and BiTE engineering</strong>, <strong>single-cell and bulk transcriptomics</strong>,
+        and <strong>large-scale neoantigen discovery</strong>, with hands-on expertise spanning antigen presentation,
+        immunopeptidomics, and structure-guided protein design. My work bridges <strong>computational modeling</strong>,
+        <strong>AI-driven automation</strong>, and <strong>experimental immuno-engineering</strong> to enable translational
+        cancer immunotherapy development.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="card section">
+      <h2><span class="bar"></span>Education</h2>
+      <div class="grid2">
+        <div class="item">
+          <div class="row">
+            <div>
+              <div class="role">Indian Institute of Technology, Madras</div>
+              <div class="where">M.Tech — Bio-Process Engineering • CGPA: 7.89/10.0</div>
+              <div class="mini">Thesis: Optimization of DHA Production from Microalgae using Metabolic Flux Analysis</div>
+            </div>
+            <div class="when">2020 – 2022</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div>
+              <div class="role">Vellore Institute of Technology, Vellore</div>
+              <div class="where">B.Tech — Biotechnology • CGPA: 8.69/10.0</div>
+              <div class="mini">Project: Degradation of Lambda-cyhalothrin by Bacterial Strains</div>
+            </div>
+            <div class="when">2016 – 2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH EXPERIENCE -->
+    <section class="card section">
+      <h2><span class="bar"></span>Research Experience</h2>
+
+      <div class="item">
+        <div class="row">
+          <div>
+            <div class="role">Assistant Research Scientist — Perlmutter Cancer Center, NYU Langone Health</div>
+            <div class="where">New York, USA</div>
+          </div>
+          <div class="when">Sept 2023 – Present</div>
+        </div>
+        <ul>
+          <li>Developing <strong>ImmunoVerse-Chat</strong>, a conversational <strong>agentic AI</strong> system that triggers multi-omics immunogenomic workflows for interactive, population-aware antigen discovery and target prioritization.</li>
+          <li>Engineering <strong>cross-HLA CAR-T</strong> and <strong>BiTE</strong> modalities using structure-guided design and recombinant protein expression; optimizing <strong>lentiviral/MLV</strong> vector production systems.</li>
+          <li>Implementing scalable <strong>HPC workflows</strong> (Docker/Singularity, SLURM) for neoantigen discovery across large tumor cohorts; integrating MS preprocessing, expression/therapeutic-window analysis, and immunogenicity scoring.</li>
+          <li>Protein structural analysis with <strong>PyMOL</strong>, <strong>VMD</strong>, and <strong>AlphaFold</strong> to guide immuno-engineering decisions and support antigen–receptor modeling.</li>
+        </ul>
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="item">
+          <div class="row">
+            <div>
+              <div class="role">Collaborative International Research Project — IIT Madras & Institut Pascal (France)</div>
+              <div class="where">DHA Production from Microalgae</div>
+            </div>
+            <div class="when">2020 – 2022</div>
+          </div>
+          <ul>
+            <li>Optimized <em>Crypthecodinium cohnii</em> cultivation using <strong>FSEOF</strong>, achieving ~2× theoretical yield.</li>
+            <li>Built metabolic flux analysis models to predict growth conditions for enhanced lipid accumulation.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div>
+              <div class="role">Graduate Research Project — IIT Madras</div>
+              <div class="where">Modeling & Control of Cold Storage Thermal Stability</div>
+            </div>
+            <div class="when">2020 – 2022</div>
+          </div>
+          <ul>
+            <li>Created a thermal dynamic model in <strong>Simulink</strong> for precise temperature control.</li>
+            <li>Implemented <strong>PID</strong> control algorithms for automated regulation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL EXPERTISE -->
+    <section class="card section">
+      <h2><span class="bar"></span>Technical Expertise</h2>
+
+      <div class="item">
+        <div class="role">Computational Biology</div>
+        <ul>
+          <li>Python, R, MATLAB, PyMOL, VMD, AlphaFold</li>
+          <li>HPC workflows (SLURM), HLA typing (OptiType)</li>
+          <li>RNA-seq analysis (DESeq2), single-cell analysis, pan-cancer genomics</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:14px;">
+        <div class="role">AI & Automation</div>
+        <ul>
+          <li>LLM integration (OpenAI ChatGPT, Google Gemini), LLM APIs</li>
+          <li>Automated scientific workflows and agentic AI systems</li>
+          <li>Prompt engineering for biomedical applications</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:14px;">
+        <div class="role">Containerization & DevOps</div>
+        <ul>
+          <li>Docker containerization, Singularity for HPC</li>
+          <li>Workflow management (CWL), version control (Git)</li>
+          <li>Automated pipeline development</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:14px;">
+        <div class="role">Molecular & Cell Biology</div>
+        <ul>
+          <li>Protein expression/purification (FPLC, AKTA), CAR-T development</li>
+          <li>Viral vectors (lentiviral/MLV), Gibson cloning</li>
+          <li>Flow cytometry, PCR, cell culture, transfection/transduction</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:14px;">
+        <div class="role">Analytical Methods</div>
+        <ul>
+          <li>UV-Vis/fluorescence spectroscopy, HPLC/GC chromatography</li>
+          <li>Mass spectrometry, metabolic flux analysis (FSEOF), enzyme kinetics</li>
+        </ul>
+      </div>
+
+      <div class="item" style="margin-top:14px;">
+        <div class="role">Software & Tools</div>
+        <ul>
+          <li>ImageJ, FlowJo, GraphPad Prism, ChemDraw</li>
+          <li>Benchling, SnapGene, BLAST</li>
+          <li>TCGA portal, GEO database, CNCB-NGDC</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="card section">
+      <h2><span class="bar"></span>Publications & Presentations</h2>
+      <div class="item">
+        <ul style="margin-top:0">
+          <li>
+            <strong>Li, G.</strong>, Guzman-Bringas, O.U., <strong>Sharma, A.</strong>, et al. (2025).
+            <em>A pan-cancer atlas of T cell targets</em>.
+            <a class="underline" href="https://www.biorxiv.org/content/10.1101/2025.01.22.634237v2" target="_blank" rel="noreferrer">bioRxiv</a>
+          </li>
+
+          <li>
+            <strong>Sharma, A.</strong>, et al. (2026).
+            <em>ImmunoVerse-Chat: A conversational agentic-AI engine for next-generation immunotherapeutic target discovery</em>.
+            AACR Annual Meeting 2026 (abstract accepted; presentation format TBA).
+          </li>
+
+          <li>
+            <strong>Jeelani, P.</strong>, Ghai, A., Saikia, N., <strong>Sharma, A.</strong>, et al. (2020).
+            <em>Baby Foods Based on Cereals</em>. Springer (book chapter).
+            <a class="underline" href="https://link.springer.com/chapter/10.1007/978-3-030-35997-3_4" target="_blank" rel="noreferrer">Springer</a>
+          </li>
+
+          <li>
+            <strong>Batra, S.</strong>, Adhikari, P., Ghai, A., <strong>Sharma, A.</strong>, et al. (2017).
+            <em>Portable antimicrobial water filter</em>. Asian Journal of Pharmaceutical and Clinical Research.
+            <a class="underline" href="https://journals.innovareacademics.in/index.php/ajpcr/article/view/19925" target="_blank" rel="noreferrer">Journal</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="card section">
+      <h2><span class="bar"></span>Awards & Fellowships</h2>
+      <div class="item">
+        <ul style="margin-top:0">
+          <li>
+            <strong>IIT Madras – Polytech Clermont-Ferrand International Research Fellowship (2021)</strong> —
+            Competitive bilateral fellowship supporting international collaborative research in metabolic engineering.
+          </li>
+          <li>
+            <strong>GATE Biotechnology AIR 71 (2020)</strong> — Top 0.6% nationwide ranking among 15,000+ candidates.
+          </li>
+          <li>
+            <strong>Siemens Healthineers Health-a-thon (2019)</strong> — Second Runner-up for innovation in healthcare technology.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section class="card section">
+      <h2><span class="bar"></span>Teaching Experience</h2>
+      <div class="item">
+        <div class="row">
+          <div>
+            <div class="role">FIITJEE Ltd., Rajasthan, India — Graduate Teaching Fellow (Biology)</div>
+          </div>
+          <div class="when">Dec 2022 – Jul 2023</div>
+        </div>
+        <ul>
+          <li>Mentored over <strong>80 medical aspirants</strong> through personalized instruction, improving <strong>NEET/AIIMS</strong> exam performance by an average of <strong>15%</strong>.</li>
+          <li>Designed and delivered a comprehensive biology curriculum covering <strong>molecular biology</strong>, <strong>genetics</strong>, and <strong>human physiology</strong>.</li>
+          <li>Conducted regular assessments and provided detailed feedback to systematically track and improve student progress.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Aman Sharma
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
